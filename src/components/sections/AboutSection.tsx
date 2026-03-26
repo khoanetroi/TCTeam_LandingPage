@@ -1,102 +1,78 @@
-
+import { Button } from "@/components/ui/button";
 
 const coreValues = [
   {
-    title: "Theo dõi hành vi",
-    desc: "Hiểu rõ khách hàng đang làm gì trên website, từ đó đưa ra phương án tối ưu hóa trải nghiệm người dùng.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
-    ),
+    icon: "📊",
+    title: "Theo dõi hành vi khách hàng",
+    desc: "Hiểu rõ được khách hàng đang làm gì trên website từ đó đưa ra phương án để cải thiện và tối ưu hóa trải nghiệm người dùng.",
   },
   {
-    title: "Xác định chân dung",
-    desc: "Dữ liệu sở thích, nhân khẩu học và thiết bị sử dụng giúp tối ưu nền tảng và đưa ra quyết định marketing chính xác.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
-    ),
+    icon: "🎯",
+    title: "Xác định nhóm khách hàng",
+    desc: "Biết rõ sở thích, nhân khẩu học và thiết bị họ sử dụng giúp bạn tối ưu hóa quảng cáo và đưa ra các quyết định marketing chính xác.",
   },
   {
-    title: "Đánh giá hiệu quả",
-    desc: "Đo lường kết quả website một cách trực quan để tối ưu chi phí và tăng giá trị chuyển đổi cho doanh nghiệp.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    icon: "📈",
+    title: "Đánh giá hiệu quả website",
+    desc: "Nhận biết kết quả mà website mang lại để tối ưu chi phí đầu tư và tăng giá trị cho khách hàng.",
   },
 ];
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative bg-white py-16 lg:py-24 border-b border-slate-100">
-      <div className="container mx-auto px-6 h-full font-sans">
+    <section id="about" className="py-24 bg-slate-950 text-white relative overflow-hidden">
+      {/* Subtle dot pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
+        backgroundSize: '32px 32px'
+      }} />
 
-        {/* EXACT MIRROR of HeroSection Flex Layout */}
-        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20">
+      <div className="container mx-auto px-6 relative">
+        {/* Header */}
+        <div className="max-w-2xl mb-16">
+          <p className="text-emerald-400 text-xs font-semibold uppercase tracking-widest mb-4">Về chúng tôi</p>
+          <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-5">
+            Giá trị cốt lõi
+          </h2>
+          <p className="text-slate-400 text-lg leading-relaxed">
+            Những giá trị chúng tôi luôn hướng đến trong từng dự án — là nền tảng cho mọi quyết định và hành động.
+          </p>
+        </div>
 
-          {/* Left Text Block */}
-          <div className="flex-1 space-y-8 max-w-2xl lg:py-10">
-            {/* Matching Hero's Badge Style */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-slate-50 text-slate-600 text-sm font-medium shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-slate-400"></span>
-              Về Chúng Tôi
-            </div>
-
-            {/* Matching Hero's Heading Scale */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-              Kiến tạo giải pháp <br />
-              số <span className="text-indigo-600 font-extrabold">chuyên nghiệp</span>
-            </h2>
-
-            {/* Matching Hero's Description Block */}
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed font-normal max-w-xl">
-              Chúng tôi không chỉ triển khai website, chúng tôi xây dựng nền tảng kinh doanh trực tuyến hiệu quả. Với sự kết hợp giữa thiết kế tinh tế và công nghệ hiện đại, TCT cam kết mang lại giá trị bền vững cho doanh nghiệp của bạn.
-            </p>
-
-            {/* Compact Profile replacing the giant card */}
-            <div className="pt-6 border-t border-slate-100 max-w-md">
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-slate-100 shadow-sm">
-                  <img
-                    src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=150&q=80"
-                    alt="Souta/GoPro"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-base">Souta/GoPro</h4>
-                  <p className="text-sm text-slate-500 font-medium">Người lập / Tư vấn giải pháp</p>
-                </div>
+        {/* Values grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          {coreValues.map((value, i) => (
+            <div
+              key={i}
+              className="group p-8 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/8 hover:border-emerald-500/40 transition-all duration-400"
+            >
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                {value.icon}
               </div>
+              <h4 className="font-bold text-white text-lg mb-3 group-hover:text-emerald-400 transition-colors duration-300">{value.title}</h4>
+              <p className="text-slate-400 text-sm leading-relaxed">{value.desc}</p>
             </div>
+          ))}
+        </div>
+
+        {/* Profile banner */}
+        <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl bg-white/5 border border-white/8">
+          <div className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-emerald-500/30 shrink-0">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+              alt="Team Lead"
+              className="w-full h-full object-cover"
+            />
           </div>
-
-          {/* Right Content Block (Core Values) */}
-          <div className="flex-1 w-full lg:max-w-none relative flex flex-col justify-center">
-
-            <div className="space-y-5 lg:space-y-6">
-              {coreValues.map((value, i) => (
-                <div
-                  key={i}
-                  className="group flex gap-6 items-start p-6 lg:p-7 rounded-2xl bg-white border border-slate-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.08)] transition-all duration-300 hover:border-indigo-100"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
-                    {value.icon}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 text-[17px] mb-2">{value.title}</h4>
-                    <p className="text-slate-500 text-[15px] leading-relaxed font-normal">{value.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
+          <div className="flex-1 text-center sm:text-left">
+            <h4 className="font-bold text-white">Tiệm Code Team</h4>
+            <p className="text-slate-400 text-sm">Tư vấn & phát triển website chuyên nghiệp</p>
           </div>
-
+          <a href="#contact">
+            <Button className="bg-emerald-500 hover:bg-emerald-400 text-white font-semibold rounded-xl px-6 cursor-pointer border-none">
+              Liên hệ ngay
+            </Button>
+          </a>
         </div>
       </div>
     </section>
